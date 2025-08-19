@@ -2,21 +2,6 @@
   <v-app
     id="app"
     :style="appStyle">
-    <v-banner
-      v-if="isBrowser"
-      color="primary"
-      class="mb-1 mt-3 white--text"
-      single-line>
-      {{ t('DescriptionDonateintervention') }}
-      <template #actions>
-        <v-btn
-          small
-          target="_blank"
-          href="https://floccus.org/donate/">
-          {{ t('LabelDonate') }}
-        </v-btn>
-      </template>
-    </v-banner>
     <v-content>
       <router-view />
     </v-content>
@@ -33,21 +18,6 @@
             class="white--text">
             floccus v{{ VERSION }}
           </v-btn>
-          <v-tooltip top>
-            <template #activator="{ on, attrs }">
-              <v-btn
-                x-small
-                text
-                class="white--text"
-                v-bind="attrs"
-                :to="{name: routes.DONATE}"
-                target="_blank"
-                v-on="on">
-                <v-icon>mdi-heart-outline</v-icon>
-              </v-btn>
-            </template>
-            <span>{{ t('LabelFunddevelopment') }}</span>
-          </v-tooltip>
           <v-tooltip top>
             <template #activator="{ on, attrs }">
               <v-btn
